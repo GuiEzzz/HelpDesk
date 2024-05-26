@@ -34,7 +34,7 @@ CREATE TABLE chamado(
     status       NUMBER(1) DEFAULT 1,
 
     CONSTRAINT pk_chamado_id PRIMARY KEY (chamado_id),
-    CONSTRAINT fk_usuario_id FOREIGN KEY (usuario_id) REFERENCES usuario(usuario_id),
+    CONSTRAINT fk_usuario_id FOREIGN KEY (usuario_id) REFERENCES usuario(usuario_id) ON DELETE CASCADE,
     CONSTRAINT fk_produto_id FOREIGN KEY (produto_id) REFERENCES produto(produto_id)
 );
 /
@@ -50,7 +50,7 @@ CREATE TABLE resposta(
 
     CONSTRAINT pk_resposta_id PRIMARY KEY (resposta_id),
     CONSTRAINT fk_chamado_id FOREIGN KEY (chamado_id) REFERENCES chamado(chamado_id) ON DELETE CASCADE,
-	CONSTRAINT fk_resposta_usuario_id FOREIGN KEY (usuario_id) REFERENCES usuario(resposta_id) 
+	CONSTRAINT fk_resposta_usuario_id FOREIGN KEY (usuario_id) REFERENCES usuario(usuario_id) ON DELETE CASCADE 
 );
 /
 -----------------------------------------------------------------------------
