@@ -38,3 +38,13 @@ BEGIN
     :NEW.resposta_id := resposta_seq.NEXTVAL;
 END;
 /
+-----------------------------------------------------------------------------
+--TRIGGER DOMINIO
+-----------------------------------------------------------------------------
+CREATE OR REPLACE TRIGGER T_dominio_seq
+BEFORE INSERT ON dominio
+FOR EACH ROW
+BEGIN
+    :NEW.dominio_id := dominio_seq.NEXTVAL;
+END;
+/

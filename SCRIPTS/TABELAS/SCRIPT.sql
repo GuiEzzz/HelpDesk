@@ -50,3 +50,15 @@ CREATE TABLE resposta(
     CONSTRAINT fk_chamado_id FOREIGN KEY (chamado_id) REFERENCES chamado(chamado_id) ON DELETE CASCADE
 );
 /
+-----------------------------------------------------------------------------
+--TABELA DOMINIO
+-----------------------------------------------------------------------------
+CREATE TABLE dominio(
+    dominio_id  NUMBER(10),
+    descricao   VARCHAR2(250) NOT NULL,
+    indice      NUMBER(2) NOT NULL,
+    valor       VARCHAR2(50) NOT NULL,       
+
+    CONSTRAINT dominio_pk PRIMARY KEY (dominio_id)
+);
+/
