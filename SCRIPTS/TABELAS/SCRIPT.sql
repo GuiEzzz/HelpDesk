@@ -45,9 +45,12 @@ CREATE TABLE resposta(
     resposta_id   NUMBER(10),
     chamado_id    NUMBER(10),
     descricao     VARCHAR2(250) NOT NULL,
+	horario       DATE DEFAULT SYSDATE,
+	usuario_id    NUMBER(10),
 
     CONSTRAINT pk_resposta_id PRIMARY KEY (resposta_id),
-    CONSTRAINT fk_chamado_id FOREIGN KEY (chamado_id) REFERENCES chamado(chamado_id) ON DELETE CASCADE
+    CONSTRAINT fk_chamado_id FOREIGN KEY (chamado_id) REFERENCES chamado(chamado_id) ON DELETE CASCADE,
+	CONSTRAINT fk_resposta_usuario_id FOREIGN KEY (usuario_id) REFERENCES usuario(resposta_id) 
 );
 /
 -----------------------------------------------------------------------------
